@@ -1,0 +1,70 @@
+%**********************************************************
+%*** COASTAL ENGINEERING TEMPLATE   ***********************
+%**********************************************************
+%*** REVISION 1 AUGUST 2014 *******************************
+%
+\ProvidesClass{PRDW_CECS_R1}
+%\documentclass[10pt,a4paper]{article} % Use A4 paper with a 12pt font size - different paper sizes will require manual recalculation of page margins and border positions
+\usepackage{marginnote} % Required for margin notes
+\usepackage{wallpaper} % Required to set each page to have a background
+\usepackage{lastpage} % Required to print the total number of pages
+
+\usepackage[left=2.8cm,right=5cm,top=1.7cm,marginparwidth=4.5cm]{geometry} % Adjust page margins
+%\usepackage[left=2.8cm,right=5cm,top=1.7cm,includeheadfoot, marginparwidth=4.5cm, showframe]{geometry}
+
+
+\usepackage{amsmath} % Required for equation customization
+\usepackage{amssymb} % Required to include mathematical symbols
+\usepackage{xcolor} % Required to specify colors by name
+
+\usepackage{fancyhdr} % Required to customize headers
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+
+\setlength{\headheight}{80pt} % Increase the size of the header to accommodate meta-information
+\pagestyle{fancy}\fancyhf{} % Use the custom header specified below
+\renewcommand{\headrulewidth}{0pt} % Remove the default horizontal rule under the header
+
+\setlength{\parindent}{0cm} % Remove paragraph indentation
+\newcommand{\tab}{\hspace*{2em}} % Defines a new command for some horizontal space
+
+\newcommand\BackgroundStructure{ % Command to specify the background of each page
+\setlength{\unitlength}{1mm} % Set the unit length to millimeters
+
+\setlength\fboxsep{0mm} % Adjusts the distance between the frameboxes and the borderlines
+\setlength\fboxrule{0.1mm} % Increase the thickness of the border line
+\put(24, 24){\fcolorbox{black}{blue!2}{\framebox(136,234){}}} % Main content box
+\put(160, 24){\fcolorbox{black}{blue!2}{\framebox(36,234){}}} % Margin box
+%\put(24, 264){\fcolorbox{black}{white!10}{\framebox(172,20){}}} % Main content box
+%\put(165, 10){\fcolorbox{black}{blue!2}{\framebox(37,247){}}} % Margin box
+\put(24, 264){\fcolorbox{black}{white!10}{\framebox(172,20){}}} % Header box
+\put(162, 271){\includegraphics[width=30mm,keepaspectratio]{images/logo_prdw.png}} % Logo box - maximum height/width: 
+}
+\renewcommand{\familydefault}{\sfdefault}
+%This changes the default font family to sans-serif
+
+%----------------------------------------------------------------------------------------
+%	HEADER INFORMATION
+%----------------------------------------------------------------------------------------
+\fancyhead[L]
+{
+%\renewcommand{\arraystretch}{1.2}
+{\begin{tabular}{llrl}
+\textbf{Project} & \projectname & \textbf{Doc. No.}& \documentnumber \\
+\end{tabular}
+}
+{\begin{tabular}{l l | l r | l r} % The header is a table with 6 columns
+\textbf{Client} & \client & \textbf{Design Level}  &\designlevel &\textbf{Rev} &\revision \\ % Project name and page count
+\textbf{Structure} & \structure& \textbf{Designed by} & \designedby & \textbf{Date}& 10/8/2014 \\ % Version and reviewed date
+\textbf{Section} & \structuresection & \textbf{Reviewed by} & \reviewedby & \textbf{Date}& 10/8/2014\\ % Designer and reviewer
+\end{tabular}}
+}
+% \textbf{Page} & \thepage/\pageref{LastPage}
+
+%----FOOTER-----
+\footskip = 30pt
+\fancyfoot{} % clear all footer fields
+
+\setlength{\headheight}{80pt} % Increase the size of the header to accommodate meta-information
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,RO]{\marginnote{Printed Document Uncontrolled}} % other \endinput
